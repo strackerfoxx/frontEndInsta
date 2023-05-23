@@ -1,0 +1,36 @@
+#profile{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(57, 57, 57);
+}
+#profile h1{
+    text-align: center;
+    font-size: 2rem;
+}
+#gridImages{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+    gap: 5px;
+    margin-top: 5px;
+}
+.postUser{
+    margin-top: 5px;
+    width:  100%;
+    height: 30vh;
+}
+.square {
+    width: 100%;
+    padding-top: 100%;
+    cursor: pointer;
+}
+.square:hover{
+    filter: opacity(60%);
+}
