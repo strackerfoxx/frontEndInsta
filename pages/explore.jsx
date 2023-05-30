@@ -39,7 +39,7 @@ export default function explore() {
           </form>
 
           {filtredUser.username ? (
-              <Link href={`http://localhost:3000/user/${filtredUser.username}`}>
+              <Link href={`${process.env.NEXT_PUBLIC_FRONTEND_URL}user/${filtredUser.username}`}>
                 <div id="result">
                   <Image src={filtredUser?.profile} width={35} height={35}/>
                   <h1>{filtredUser?.username}</h1>
