@@ -4,7 +4,6 @@ import Modal from './Modal'
 import CreateModal from './CreateModal'
 import useAuth from '../hooks/useAuth'
 import useModal from '@/hooks/useModal'
-
 export default function AsideBottom() {
     const { usName } = useAuth()
     const { modal, setModal, post } = useModal()

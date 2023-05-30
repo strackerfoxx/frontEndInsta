@@ -7,7 +7,6 @@ import usePost from "@/hooks/usePost"
 
 export default function Home({}) {
   const { posts } = usePost()
-
   const { modal, post } = useModal()
 
   return (

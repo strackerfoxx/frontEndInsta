@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
-export default function explore() {
+export default function Explore() {
   const [filtredUser, setFiltredUser] = useState({})
   const [search, setSearch] = useState("")
 
