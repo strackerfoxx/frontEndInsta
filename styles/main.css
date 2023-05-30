@@ -11,6 +11,7 @@ aside{
 }
 .logo{
     text-align: center;
+    margin-bottom: 2rem;
 }
 aside nav a{
     color: white;
@@ -24,11 +25,13 @@ aside nav a{
 aside nav div{
     display: flex;
     align-items: center;
-    cursor: pointer
+    cursor: pointer;
+    margin-bottom: 2rem;
 }
 svg{
     width: 2rem;
     margin-right: 1rem;
+    padding: 0;
 }
 article{
     margin-left: calc(17rem + 17%);
@@ -38,20 +41,16 @@ article{
 .bottombar{
     display: none;
 }
-
 @media (max-width: 1264px) {
-    .texto{
+    p{
         display: none;
-    }
-    svg{
-        margin-top: 1.3em;
     }
     aside{
         width: 3rem;
     }
     .logo a img{
-        width: 3rem;
-        height: 3rem;
+        width: 3.5rem;
+        height: 3.5rem;
         margin-bottom: 1rem;
     }
     article{
@@ -84,8 +83,8 @@ article{
 }
 
 .noIndex{
-    margin-left: calc(17rem + 2%);
-    margin-right: 2%;
+    margin-left: calc(17rem + 10%);
+    margin-right: 10%;
 }
 
 @media (max-width: 1264px) {

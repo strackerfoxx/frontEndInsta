@@ -2,11 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import PostModal from './PostModal'
 import Modal from './Modal'
+import useModal from '@/hooks/useModal'
 
-export default function Profile({setPost, modal, setModal, data, post, id, setDiscard}) {
+export default function Profile({data}) {
     const {user: {username, createdAt, name, profile}, posts} = data
-    console.log(profile)
-    console.log(posts)
+    const { setPost, modal, setModal, post, id, setDiscard } = useModal()
+    
   return (
     <>
       {modal && Object.entries(post).length > 0 && <Modal 
@@ -17,14 +18,15 @@ export default function Profile({setPost, modal, setModal, data, post, id, setDi
 
       ><PostModal post={post}/> </Modal>}
         <div id='profile'>
-            <Image src={profile} width={70} height={70} style={{borderRadius: "10rem"}} alt={`imagen de usuario de ${username}`}/>
-            <div style={{display: "flex", justifyContent: "center"}}>
+            <Image src={profile} width={120} height={120} style={{borderRadius: "10rem"}} alt={`imagen de usuario de ${username}`}/>
+            <div style={{display: "flex", justifyContent: "center", flexDirection: "column"}}>
                 <h1>{username}</h1>
+                <h3>{posts.length} posts</h3>
             </div>
         </div>
-        <div id='gridImages'>
+        <div className='gridImages'>
             {posts.map(post => (
-                    <div className="square" style={{backgroundImage: `url(${post.image})`, backgroundSize: "cover",backgroundPosition: "center"}} onClick={() => {
+                    <div key={post._id} className="square" style={{backgroundImage: `url(${post.image})`, backgroundSize: "cover",backgroundPosition: "center"}} onClick={() => {
                     setModal(true)
                     setPost(post)
                 }}></div>

@@ -43,7 +43,7 @@ export default function User({data,
 
 export async function getServerSideProps(context){
     const {username} = context.query
-    const respuesta = await fetch("http://localhost:4000/api/users/posts?username=" + username)
+    const respuesta = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/users/posts?username=` + username)
     const data = await respuesta.json()
     return{
         props: {

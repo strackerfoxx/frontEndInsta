@@ -15,7 +15,7 @@ export default function Login() {
         if(password.length < 8) return setAlerta({error: true, msg: "La contraseña debe tener minimo 8 caracteres"})
         if(!validatePass(password)) return setAlerta({error: true, msg: "La contraseña debe tener una mayuscula una minuscula y un numero o simbolo"})
         setAlerta({error: true, msg: ""})
-        const respuesta = await fetch("http://localhost:4000/api/users/login", {
+        const respuesta = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/users/login`, {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',

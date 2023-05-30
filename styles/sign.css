@@ -21,6 +21,7 @@
     margin: 1rem 0;
     width: 25rem;
     backdrop-filter: blur(2px);
+    border: 0;
 }
 .campo input{
     background-color: transparent;

@@ -1,12 +1,18 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import axios from 'axios';
 import Spinner from './Spinner';
+import useAuth from '@/hooks/useAuth';
+import useModal from '@/hooks/useModal';
 
-export default function CreateModal({setModal, id, setId, updated, setUpdated}) {
+export default function CreateModal({}) {
   const [image, setImage] = useState("")
   const [description, setDescription] = useState("")
   const [next, setNext] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  const {updated, setUpdated} = useAuth()
+  const {setModal, id, setId} = useModal()
+
 
   async function handleChange(e){
       const formData = new FormData();

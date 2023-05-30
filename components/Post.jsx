@@ -1,10 +1,16 @@
 import {useState} from 'react'
 import Image from "next/image"
 import Link from "next/link"
+import useAuth from '@/hooks/useAuth'
+import useModal from '@/hooks/useModal'
+import usePost from '@/hooks/usePost'
 
-export default function Post({post, setModal, updated, setUpdated, setPost}) {
+export default function Post({post}) {
     const [comment, setComment] = useState("")
-
+    const { token } = useAuth()
+    const {setModal, setPost} = useModal()
+    const {updated, setUpdated} = usePost()
+    
     async function addComment(e, post){
         e.preventDefault()
         if(comment === "") return
@@ -13,7 +19,7 @@ export default function Post({post, setModal, updated, setUpdated, setPost}) {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem("user").split(",")[0]}`
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({"content": comment})
             })
@@ -26,11 +32,11 @@ export default function Post({post, setModal, updated, setUpdated, setPost}) {
 
     async function handleLike(id){
         try {
-          await fetch(`http://localhost:4000/api/likes?id=${id}`, {
+          await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/likes?id=${id}`, {
             method: "GET",
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${localStorage.getItem("user").split(",")[0]}`
+              'Authorization': `Bearer ${token}`
             },
           })
           setUpdated(!updated)

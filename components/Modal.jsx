@@ -1,8 +1,10 @@
 import {useEffect} from 'react'
 import axios from 'axios';
+import useModal from '@/hooks/useModal';
 
-export default function Modal({setModal, setPost, id, setId, setDiscard, children}) {
+export default function Modal({children}) {
   
+  const { setModal, setPost, id, setId, setDiscard } = useModal()
   useEffect(() => {
     document.body.style.overflow = "hidden";
     const modalContainer = document.getElementById('modalContainer');
