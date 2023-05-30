@@ -15,7 +15,7 @@ export default function Aside(){
 
         <div className='logo'>
           <Link href="/">
-            <Image src="/../public/img/foxxFront.png" width={70} height={70} alt='logo' />
+            <Image src="https://i.imgur.com/LIDX80P.png" width={70} height={70} alt='logo' />
           </Link>
         </div>
         <nav>

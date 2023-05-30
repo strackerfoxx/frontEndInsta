@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'tinypic.host', 'backend-insta-nine.vercel.app'],
+    domains: ['localhost', 'tinypic.host', 'backend-insta-nine.vercel.app', 'i.imgur.com'],
   },
 }
 

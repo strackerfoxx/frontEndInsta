@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 
 export default function PostModal({post}) {
-    console.log(post)
     const { image, description } = post
     const { profile, username } = post.author
   return (

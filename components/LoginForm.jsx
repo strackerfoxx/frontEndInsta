@@ -33,7 +33,7 @@ export default function Login() {
   return (
     <div className='sign'>
         <div>
-          <Image src="/../public/img/logo.png" width={70} height={70} alt='logo'/>
+          <Image src="https://i.imgur.com/LIDX80P.png" width={70} height={70} alt='logo'/>
         </div>
         {alerta.msg && <Alert alerta={alerta} />}
         <form onSubmit={handleSubmit}>

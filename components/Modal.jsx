@@ -31,9 +31,7 @@ export default function Modal({children}) {
             }
             discardPost()
             setDiscard(false)
-            console.log("borrando")
           }else{
-            console.log("PARA")
             return
           }
         }
